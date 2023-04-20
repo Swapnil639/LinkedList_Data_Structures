@@ -1,8 +1,6 @@
 package com.bridgelabz;
 
-public class LinkedList<E> {
-    Node<E> head;
-    Node<E> tail;
-
-
+public class LinkedList<T> {
+    Node<T> head;
+    Node<T> tail;
 }
