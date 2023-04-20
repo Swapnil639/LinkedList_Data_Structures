@@ -6,7 +6,7 @@ public class LinkedList<T> {
 
     public void add(T data) {
         Node<T> newNode=new Node<>(data);
-        if (newNode==null){
+        if (head==null){
             head=newNode;
             tail=newNode;
         }
@@ -23,6 +23,16 @@ public class LinkedList<T> {
            System.out.print(currentNode.data+" -> ");
            currentNode=currentNode.next;
        }
+        System.out.println("null");
+    }
 
+    public void append(T data) {
+       Node<T> newNode=new Node<>(data);
+       if (head==null){
+           head=newNode;
+           tail=newNode;
+       }
+      tail.next=newNode;
+       tail=newNode;
     }
 }
