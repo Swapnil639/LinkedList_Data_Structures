@@ -15,6 +15,9 @@ public class LinkedListMain<T> {
         linkedList1.append(70);
         linkedList1.display();
 
+        linkedList1.firstElementDelete();
+        linkedList1.display();
+
 
 
 
