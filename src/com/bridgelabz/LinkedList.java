@@ -46,18 +46,29 @@ public class LinkedList<T> {
     }
 
     public void lastElementDelete() {
-        if (head == null){
+        if (head == null) {
             System.out.println("Linked list is Empty");
         } else if (head == tail) {
             head = null;
             tail = null;
-        }else {
+        } else {
             Node<T> currentNode = head;
-            while (currentNode.next != tail){
+            while (currentNode.next != tail) {
                 currentNode = currentNode.next;
             }
             currentNode.next = null;
             tail = currentNode;
         }
+    }
+
+    public Node<T> search(T data) {
+        Node<T> currentNode = head;
+        while (currentNode != null) {
+            if (currentNode.data.equals(data)) {
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return null;
     }
 }
