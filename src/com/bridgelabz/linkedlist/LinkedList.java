@@ -1,4 +1,4 @@
-package com.bridgelabz;
+package com.bridgelabz.linkedlist;
 
 public class LinkedList<T> {
     Node<T> head;
@@ -85,5 +85,14 @@ public class LinkedList<T> {
         }else {
             System.out.println("Element Absent in Linked list");
         }
+    }
+    public void searchElementThenDelete(T data) {
+        Node<T> secondLastNode = head;
+        Node<T> lastNode = head.next;
+        while (lastNode.data != data) {
+            lastNode = lastNode.next;
+            secondLastNode = secondLastNode.next;
+        }
+        secondLastNode.next = lastNode.next;
     }
 }

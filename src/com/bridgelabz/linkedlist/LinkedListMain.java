@@ -1,4 +1,4 @@
-package com.bridgelabz;
+package com.bridgelabz.linkedlist;
 
 public class LinkedListMain<T> {
     public static void main(String[] args) {
@@ -28,6 +28,9 @@ public class LinkedListMain<T> {
         }
 
         linkedList.insertElement(30,40);
+        linkedList.display();
+
+        linkedList.searchElementThenDelete(30);
         linkedList.display();
 
 
