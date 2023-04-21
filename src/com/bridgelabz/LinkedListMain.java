@@ -27,6 +27,9 @@ public class LinkedListMain<T> {
             System.out.println("Element Present in Linked list");
         }
 
+        linkedList.insertElement(30,40);
+        linkedList.display();
+
 
 
 

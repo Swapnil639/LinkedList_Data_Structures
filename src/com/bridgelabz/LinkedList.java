@@ -71,4 +71,19 @@ public class LinkedList<T> {
         }
         return null;
     }
+    public void insertElement(T searchNode, T insertElement) {
+        Node newNode = new Node<>(insertElement);
+        Node searchedNode = search(searchNode);
+        boolean condition = false;
+        if (searchedNode != null){
+            newNode.next = searchedNode.next;
+            searchedNode.next = newNode;
+            condition = true;
+        }
+        if (condition==true){
+            System.out.println("Successfully added the element");
+        }else {
+            System.out.println("Element Absent in Linked list");
+        }
+    }
 }
