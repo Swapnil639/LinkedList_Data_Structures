@@ -5,7 +5,7 @@ public class LinkedList<T> {
     Node<T> tail;
 
     public void add(T data) {
-        Node newNode = new Node<>(data);
+        Node<T> newNode = new Node<>(data);
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -16,7 +16,7 @@ public class LinkedList<T> {
     }
 
     public void append(T data) {
-        Node newNode = new Node<>(data);
+        Node<T> newNode = new Node<>(data);
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -27,7 +27,7 @@ public class LinkedList<T> {
     }
 
     public void display() {
-        Node currentNode = head;
+        Node<T> currentNode = head;
         if (head == null) {
             System.out.println("Linked List is Empty");
         }
@@ -43,5 +43,21 @@ public class LinkedList<T> {
             System.out.println("Linked list is Empty");
         }
         head = head.next;
+    }
+
+    public void lastElementDelete() {
+        if (head == null){
+            System.out.println("Linked list is Empty");
+        } else if (head == tail) {
+            head = null;
+            tail = null;
+        }else {
+            Node<T> currentNode = head;
+            while (currentNode.next != tail){
+                currentNode = currentNode.next;
+            }
+            currentNode.next = null;
+            tail = currentNode;
+        }
     }
 }
