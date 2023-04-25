@@ -1,6 +1,6 @@
 package com.bridgelabz.linkedlist;
 
-public class LinkedListMain<T> {
+public class LinkedListMain {
     public static void main(String[] args) {
         System.out.println("Welcome to Linked List Program");
         LinkedList<Integer> linkedList=new LinkedList<>();
@@ -32,6 +32,16 @@ public class LinkedListMain<T> {
 
         linkedList.searchElementThenDelete(30);
         linkedList.display();
+
+        linkedList.insertElement(56,30);
+        linkedList.display();
+
+        linkedList.ascendingOrder();
+        linkedList.display();
+
+
+
+
 
 
 

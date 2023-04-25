@@ -1,8 +1,9 @@
 package com.bridgelabz.linkedlist;
 
-public class LinkedList<T> {
+public class LinkedList<T extends Comparable > {
     Node<T> head;
     Node<T> tail;
+    T temp;
 
     public void add(T data) {
         Node<T> newNode = new Node<>(data);
@@ -72,8 +73,8 @@ public class LinkedList<T> {
         return null;
     }
     public void insertElement(T searchNode, T insertElement) {
-        Node newNode = new Node<>(insertElement);
-        Node searchedNode = search(searchNode);
+        Node<T> newNode = new Node<>(insertElement);
+        Node<T> searchedNode = search(searchNode);
         boolean condition = false;
         if (searchedNode != null){
             newNode.next = searchedNode.next;
@@ -94,5 +95,26 @@ public class LinkedList<T> {
             secondLastNode = secondLastNode.next;
         }
         secondLastNode.next = lastNode.next;
+    }
+
+
+    public void ascendingOrder(){
+        Node<T> currentNode = head, index;
+        if (currentNode == null) {
+            System.out.println("List is empty");
+        }
+        while (currentNode != null) {
+            index = currentNode.next;
+            while (index != null) {
+                if (currentNode.data.compareTo(index.data)>0) {
+                   T temp = currentNode.data;
+                    currentNode.data=index.data;
+                    index.data=temp;
+                }
+                index = index.next;
+            }
+            currentNode = currentNode.next;
+        }
+
     }
 }
